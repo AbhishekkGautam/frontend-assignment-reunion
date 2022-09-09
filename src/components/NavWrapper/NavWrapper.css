@@ -1,0 +1,6 @@
+.main-container {
+  height: calc(100vh - 80px);
+  position: relative;
+  top: 80px;
+  background-color: var(--primary-color);
+}
