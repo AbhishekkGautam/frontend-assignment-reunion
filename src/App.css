@@ -4,7 +4,7 @@
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 2rem 1rem;
 }
 
 .btn {
@@ -32,4 +32,20 @@
 .btn-outline-primary:hover {
   background-color: var(--black);
   color: var(--secondary-color);
+}
+
+.btn-lg {
+  padding: 10px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 3rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    margin: 3rem auto;
+  }
 }

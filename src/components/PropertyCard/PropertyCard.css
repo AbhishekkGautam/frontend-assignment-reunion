@@ -1,0 +1,91 @@
+.property-card {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+
+.property-card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-card-body {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.property-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.property-info-container .property-price {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.property-info-container .property-price span {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+.property-title {
+  font-size: 1.4rem;
+  padding: 4px 0;
+}
+.favorite-icon-btn {
+  align-self: baseline;
+  background-color: transparent;
+  border: 1px solid var(--gray-light);
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.favorite-icon-btn .favorite-icon {
+  color: var(--gray-500);
+}
+
+.favorite-icon-btn .favorite-icon:hover {
+  color: var(--accent-color);
+}
+
+.property-address {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.horizontal-divider {
+  border-bottom: 1px solid var(--primary-color);
+  margin: 1rem 1.5rem;
+}
+
+.property-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card-text-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-text-with-icon .md-icon {
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
+.card-text-with-icon p {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
