@@ -4,7 +4,7 @@
 
 .container {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
 }
 
 .btn {
@@ -36,4 +36,16 @@
 
 .btn-lg {
   padding: 10px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 3rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    margin: 3rem auto;
+  }
 }

@@ -1,6 +1,7 @@
 .search-top-bar {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -52,18 +53,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   margin: 3rem 0;
   background-color: var(--secondary-color);
   padding: 2rem 1rem;
   border-radius: 4px;
 }
 
-.filter-item {
-}
-
 .filter-item label {
   display: block;
-  color: var(--gray-medium);
+  color: var(--gray-500);
   font-weight: 400;
   font-size: 18px;
 }
@@ -85,7 +84,4 @@
   font-size: 20px;
   font-weight: bold;
   outline: none;
-}
-
-.filter-item input[type="text"] {
 }

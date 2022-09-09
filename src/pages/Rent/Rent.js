@@ -1,5 +1,5 @@
 import React from "react";
-import { NavWrapper, SearchWithFilters } from "../../components";
+import { NavWrapper, PropertyList, SearchWithFilters } from "../../components";
 import "./Rent.css";
 
 export const Rent = () => {
@@ -7,6 +7,7 @@ export const Rent = () => {
     <NavWrapper>
       <div className="container">
         <SearchWithFilters />
+        <PropertyList />
       </div>
     </NavWrapper>
   );
