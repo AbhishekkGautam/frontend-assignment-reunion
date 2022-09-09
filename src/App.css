@@ -4,7 +4,7 @@
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 2rem auto;
 }
 
 .btn {
@@ -32,4 +32,8 @@
 .btn-outline-primary:hover {
   background-color: var(--black);
   color: var(--secondary-color);
+}
+
+.btn-lg {
+  padding: 10px 24px;
 }

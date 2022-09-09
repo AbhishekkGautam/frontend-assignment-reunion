@@ -14,22 +14,22 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/rent">
+            <Link className="nav-link" to="/">
               Buy
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/rent">
+            <Link className="nav-link" to="/">
               Sell
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/rent">
+            <Link className="nav-link" to="/">
               Manage Property
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/rent">
+            <Link className="nav-link" to="/">
               Resources
             </Link>
           </li>
