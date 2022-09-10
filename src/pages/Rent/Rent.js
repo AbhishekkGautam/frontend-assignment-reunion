@@ -1,4 +1,5 @@
 import React from "react";
+import { ThreeDots } from "react-loader-spinner";
 import { NavWrapper, PropertyList, SearchWithFilters } from "../../components";
 import { getFilteredProperties } from "../../helpers";
 import { useFilter, usePropertyData } from "../../hooks/hooks";
@@ -6,7 +7,7 @@ import "./Rent.css";
 
 export const Rent = () => {
   const {
-    state: { propertyData },
+    state: { propertyData, loading, error },
   } = usePropertyData();
 
   const { state } = useFilter();
@@ -17,13 +18,20 @@ export const Rent = () => {
     <NavWrapper>
       <div className="container">
         <SearchWithFilters />
-        {filteredProperties.length === 0 ? (
-          <div className="not-found">
-            <p>No property matches your search.</p>
-          </div>
-        ) : (
-          <PropertyList propertyData={filteredProperties} />
-        )}
+        <div className="property-list-section">
+          {loading ? (
+            <ThreeDots
+              color="#7065ee"
+              height={80}
+              width={80}
+              className="loader"
+            />
+          ) : error ? (
+            <p>{error.message}</p>
+          ) : (
+            <PropertyList propertyData={filteredProperties} />
+          )}
+        </div>
       </div>
     </NavWrapper>
   );
