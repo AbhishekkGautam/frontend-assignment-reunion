@@ -1,37 +1,64 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="navbar-brand">Estatery</div>
+      <Link to="/">
+        <div className="navbar-brand">Estatery</div>
+      </Link>
       <div className="navbar-section">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link" to="/rent">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              to="/rent"
+            >
               Rent
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              to="/buy"
+            >
               Buy
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              to="/sell"
+            >
               Sell
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              to="/manage-property"
+            >
               Manage Property
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/favorites">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              to="/favorites"
+            >
               Favorites
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className="navbar-btn">

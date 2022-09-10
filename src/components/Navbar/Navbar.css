@@ -39,6 +39,11 @@
   transition: all 0.2s ease-out;
 }
 
+.nav-link.active {
+  background-color: var(--purple-light);
+  color: var(--accent-color);
+}
+
 .nav-link:hover {
   background-color: var(--purple-light);
   color: var(--accent-color);

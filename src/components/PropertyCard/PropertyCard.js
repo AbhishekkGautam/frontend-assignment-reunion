@@ -7,6 +7,7 @@ import {
   MdCropLandscape,
   MdOutlineFavorite,
 } from "react-icons/md";
+import { HiSparkles } from "react-icons/hi";
 import { putCommasInPrice } from "../../helpers";
 import { usePropertyData } from "../../hooks/hooks";
 import {
@@ -83,6 +84,15 @@ export const PropertyCard = ({ property }) => {
           </p>
         </div>
       </div>
+      {property.isPopular && (
+        <>
+          <div className="badge-square"></div>
+          <div className="badge-card">
+            {" "}
+            <HiSparkles className="spark-icon" /> POPULAR
+          </div>
+        </>
+      )}
     </div>
   );
 };
