@@ -2,12 +2,16 @@ import React from "react";
 import { PropertyCard } from "../PropertyCard/PropertyCard";
 import "./PropertyList.css";
 
-export const PropertyList = () => {
+export const PropertyList = ({ propertyData }) => {
   return (
     <div className="property-list-container">
-      <PropertyCard />
-      <PropertyCard />
-      <PropertyCard />
+      {propertyData?.map(property => {
+        return (
+          <div key={property.id}>
+            <PropertyCard property={property} />;
+          </div>
+        );
+      })}
     </div>
   );
 };

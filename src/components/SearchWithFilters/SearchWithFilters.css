@@ -41,7 +41,7 @@
   align-items: center;
   cursor: pointer;
   font-size: 20px;
-  color: var(--gray-medium);
+  color: var(--gray-500);
   transition: all 0.5s ease;
 }
 
@@ -75,13 +75,27 @@
 .filter-item input {
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .filter-item select {
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   outline: none;
+}
+
+.filter-item input[type="date"]:before {
+  content: attr(placeholder);
+  min-width: 180px;
+}
+
+input::-webkit-datetime-edit {
+  display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+  margin-left: 1.5rem;
+  cursor: pointer;
 }

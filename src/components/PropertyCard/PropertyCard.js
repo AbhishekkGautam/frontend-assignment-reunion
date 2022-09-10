@@ -5,47 +5,80 @@ import {
   MdOutlineKingBed,
   MdOutlineBathtub,
   MdCropLandscape,
+  MdOutlineFavorite,
 } from "react-icons/md";
+import { putCommasInPrice } from "../../helpers";
+import { usePropertyData } from "../../hooks/hooks";
+import {
+  ADD_TO_FAVORITES,
+  REMOVE_FROM_FAVORITES,
+} from "../../reducers/actions";
 
-export const PropertyCard = () => {
+export const PropertyCard = ({ property }) => {
+  const { name, image, price, street, beds, bathrooms, area } = property;
+  const {
+    state: { favoritesProperty },
+    dispatch,
+  } = usePropertyData();
+
+  const isPropertyAlreadyInFavorites = favoritesProperty?.find(
+    p => p.id === property.id
+  );
+
+  const removeFromFavorites = () => {
+    const filteredProperties = favoritesProperty.filter(
+      p => p.id !== property.id
+    );
+    dispatch({ type: REMOVE_FROM_FAVORITES, payload: filteredProperties });
+  };
+
   return (
     <div className="property-card">
       <div className="property-card-header">
-        <img
-          src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
+        <img src={image} alt={name} />
       </div>
       <div className="property-card-body">
         <div className="property-info-container">
           <div className="">
             <p className="property-price">
-              $2,095<span> /month</span>
+              ${putCommasInPrice(price)}
+              <span> /month</span>
             </p>
-            <h3 className="property-title">Palm Harbor</h3>
+            <h3 className="property-title">{name}</h3>
           </div>
-          <button className="favorite-icon-btn">
-            <MdOutlineFavoriteBorder className="favorite-icon" />
-          </button>
+          {isPropertyAlreadyInFavorites ? (
+            <button className="favorite-icon-btn" onClick={removeFromFavorites}>
+              <MdOutlineFavorite className="favorite-icon active" />
+            </button>
+          ) : (
+            <button
+              className="favorite-icon-btn"
+              onClick={() =>
+                dispatch({ type: ADD_TO_FAVORITES, payload: property })
+              }
+            >
+              <MdOutlineFavoriteBorder className="favorite-icon" />
+            </button>
+          )}
         </div>
-        <p className="property-address">2699 Green Valley, Highland Lake, FL</p>
+        <p className="property-address">{street}</p>
       </div>
       <div className="horizontal-divider"></div>
       <div className="property-card-footer">
         <div className="card-text-with-icon">
           <MdOutlineKingBed className="md-icon" />
-          <p>3 Beds</p>
+          <p>{beds} Beds</p>
         </div>
         <div className="card-text-with-icon">
           <MdOutlineBathtub className="md-icon" />
-          <p>2 Bathrooms</p>
+          <p>{bathrooms} Bathrooms</p>
         </div>
         <div className="card-text-with-icon">
           <MdCropLandscape className="md-icon" />
           <p>
-            6*7.5{" "}
+            {area}{" "}
             <span>
-              m<sup>2</sup>
+              ft<sup>2</sup>
             </span>
           </p>
         </div>

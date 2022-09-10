@@ -7,7 +7,7 @@
 }
 
 :root {
-  --primary-color: #f5f4f9;
+  --primary-color: #f6f4fb;
   --secondary-color: #ffffff;
   --accent-color: #7065ee;
   --black: #00000e;
@@ -23,6 +23,7 @@ html:focus-within {
 
 body {
   font-family: "DM Sans", sans-serif;
+  background-color: var(--primary-color);
   min-height: 100vh;
   line-height: 1.5;
   text-rendering: optimizeSpeed;

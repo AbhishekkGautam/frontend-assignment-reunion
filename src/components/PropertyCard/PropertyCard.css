@@ -2,7 +2,6 @@
   width: 100%;
   min-height: 250px;
   height: auto;
-  margin-bottom: 30px;
   border-radius: 5px;
   overflow: hidden;
   background-color: var(--secondary-color);
@@ -52,6 +51,10 @@
 
 .favorite-icon-btn .favorite-icon {
   color: var(--gray-500);
+}
+
+.favorite-icon-btn .favorite-icon.active {
+  color: var(--accent-color);
 }
 
 .favorite-icon-btn .favorite-icon:hover {
