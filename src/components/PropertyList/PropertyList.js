@@ -13,9 +13,9 @@ export const PropertyList = ({ propertyData }) => {
         <div className="property-list-container">
           {propertyData?.map(property => {
             return (
-              <div key={property.id}>
-                <PropertyCard property={property} />;
-              </div>
+              <React.Fragment key={property.id}>
+                <PropertyCard property={property} />
+              </React.Fragment>
             );
           })}
         </div>
